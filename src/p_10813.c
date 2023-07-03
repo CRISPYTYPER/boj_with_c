@@ -10,11 +10,11 @@ int main(void) {
 
     scanf("%d %d", &n, &m);
 
-    for (int i = 1; i <= n; i++) { // 각 바구니 구슬 번호 초기화
-        arr[i] = i;
+    for (int p = 1; p <= n; p++) { // 각 바구니 구슬 번호 초기화
+        arr[p] = p;
     }
 
-    for (int i = 0; i < m; i++) {
+    for (int p = 1; p <= m; p++) {
         scanf("%d %d", &i, &j);
         temp = arr[i];
         arr[i] = arr[j];
