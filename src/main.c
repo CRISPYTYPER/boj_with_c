@@ -1,13 +1,21 @@
 #include <stdio.h>
-#include <string.h>
+int max(int a, int b);
+int main() {
+    int a, b;
+    int (*pmax)(int, int);
+    pmax = max;
 
-int main(void) {
-    char s[1002] = {0};
-    int i;
+    scanf("%d %d", &a, &b);
+    printf("max(a,b) : %d \n", max(a, b));
+    printf("pmax(a,b) : %d \n", pmax(a, b));
 
-    scanf("%s", s);
-    scanf("%d", &i);
-    printf("%lu\n", strlen(s));
+    return 0;
+}
+int max(int a, int b) {
+    if (a > b)
+        return a;
+    else
+        return b;
 
     return 0;
 }
