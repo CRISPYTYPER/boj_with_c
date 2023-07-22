@@ -10,7 +10,7 @@ typedef struct _Node {
     NodePointer link;
 } Node;
 
-NodePointer hash[BUCKET];
+NodePointer hash[HASH_MAX];
 
 int stringToInt(char *string) {
     int sum = 0;
@@ -21,7 +21,7 @@ int stringToInt(char *string) {
     return sum;
 }
 
-int hashing(int key) { return key % BUCKET; }
+int hashing(int key) { return key % HASH_MAX; }
 
 void chaining(NodePointer node) {
     int index = hashing(stringToInt(node->data));
